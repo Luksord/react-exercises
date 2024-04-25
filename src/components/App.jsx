@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Counter } from './Counter';
-import { Timer } from './Timer';
+import { Counter } from './module3/Counter';
+import { Timer } from './module3/Timer';
 
 const appStyles = {
   height: '100vh',
