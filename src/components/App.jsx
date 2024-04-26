@@ -1,5 +1,6 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import { Counter } from './module3/Counter';
+import { Counter2 } from './module3/Counter';
 import { Timer } from './module3/Timer';
 
 const appStyles = {
@@ -12,10 +13,18 @@ const appStyles = {
 };
 
 export const App = () => {
+  const [step, setStep] = useState(5);
+
   return (
     <div style={appStyles}>
-      <Counter />
+      <input
+        value={step}
+        onChange={event => setStep(Number(event.target.value))}
+      />
+      <Counter2 initialValue={0} step={step} />
       {/* <Timer /> */}
     </div>
   );
 };
+
+export default App;

@@ -35,3 +35,25 @@ export const Counter = ({ initialCount = 0 }) => {
     </div>
   );
 };
+
+//////
+
+export const Counter2 = ({ initialValue = 0, step = 1 }) => {
+  const { count, setCount } = useState(initialValue);
+
+  const onIncrementClick = () => {
+    setCount(prevValue => prevValue + step);
+  };
+
+  const onDecrementClick = () => {
+    setCount(prevValue => prevValue - step);
+  };
+
+  return (
+    <div>
+      <button onClick={onIncrementClick}>Increment by {step}</button>
+      <h1>{count}</h1>
+      <button onClick={onDecrementClick}>Decrement by {step}</button>
+    </div>
+  );
+};
